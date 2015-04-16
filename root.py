@@ -29,26 +29,16 @@ def save_dataset():
     print "Saving Dataset"
 
 @app.get('/snapshot')
-def snapshot():
-    print "HGHHHHHHHHHHHHHHHHHHHHHH"
+def create_snapshot():
     PyImpNetwork.learn_callback()
-
-	#if 1 != None: 
-    #    return {"success": True, "data": 1}
-    #else:
-    # 	return {"success": False, "error" : "name does not exist"}   
-
 
 @app.post('/')
 @app.post('/pyimp')
-def post_contrat():
-	print request.forms
+def train_network():
+    PyImpNetwork.train_callback()
 
-    #PyImpNetwork.train_callback()
-
-#PyImpNetwork.train_callback() != None: 
-#    PyImpNetwork.train_callback()
-#    return {"success": True, "data": shortname}
-#  else:
-#    return {"success": False, "error" : "shortname does not exist"}   
-	#return template('training_ui', inputs=inputs, outputs=outputs, errors=errors, forms=forms)
+    #if PyImpNetwork.train_callback() != None: 
+    #    PyImpNetwork.train_callback()
+    #    return {"success": True, "data": shortname}
+    #else:
+    #    return {"success": False, "error" : "shortname does not exist"}   
